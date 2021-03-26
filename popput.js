@@ -1,10 +1,10 @@
-import { escpos} from "escpos-xml"
+import { EscPos} from "escpos-xml"
 
 let btnimpresora = document.getElementById('NombreImpresora');
 
 btn.addEventListener("click", NombreImpresoraNueva);
 
-function NombreImpresoraNueva(){
+function NombreImpresoraNueva(data0){
 
     const xml = `
     <?xml version="1.0" encoding="UTF-8"?>
@@ -20,7 +20,7 @@ function NombreImpresoraNueva(){
             </small>
         </align>
         <small>
-            <text-line>Date: {{moment date format="DD/MM/YYYY HH:mm:ss"}}</text-line>
+            <text-line>Date: ${data0.hour}{{moment date format="DD/MM/YYYY HH:mm:ss"}}</text-line>
             <text-line size="1:0">{{numeral price format="$ 0,0.00"}}</text-line>
             <text-line size="1:0">{{paddedString}}</text-line>
         </small>
